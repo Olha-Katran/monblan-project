@@ -70,3 +70,17 @@ listBtn.addEventListener("click", () => {
   listBtn.classList.add("view-toggle__active");
   gridBtn.classList.remove("view-toggle__active");
 });
+
+const startDatePicker = new Pikaday({
+    field: document.getElementById('start-date'),
+    format: 'YYYY-MM-DD',
+    onSelect: function() {
+        endDatePicker.setMinDate(this.getDate());
+
+    }
+});
+
+const endDatePicker = new Pikaday({
+    field: document.getElementById('end-date'),
+    format: 'YYYY-MM-DD',
+});
