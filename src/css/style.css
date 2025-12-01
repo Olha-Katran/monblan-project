@@ -4,30 +4,97 @@ body {
     margin: 0
 }
 
- h1 {
+h1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 24px;
- }
+    font-size: 16px;
+}
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 24px;
+    }
+}
+
+p, span, li, h4 {
+    font-size: 12px;
+}
+@media (min-width: 768px) {
+    p, span, li, h4 {
+        font-size: 16px;
+    }
+}
+
+.sprite-container__top {
+    position: relative;
+}
+
+.header__sprite {
+   display: none;
+}
+@media (min-width: 768px) {
+    .header__sprite {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: -20px;
+        left: 0;
+        z-index: 0;
+    }
+}
 
 header {
+    position: relative;
     display: flex;
-    justify-content: center;
     align-items: center;
-    background-color: #fff;
+    background: #fff;
+    
+    background-color: rgba(255, 255, 255, 0.67);
+    z-index: 1;
     box-shadow: inset   0px 12px 24px 0px rgba(0, 0, 0, 0.3),
                         0px 4px 24px 0px rgba(0, 0, 0, 0.3); 
 }
 
+header img {
+    width: 70px;
+    height: auto;
+    margin: 10px 0;
+}
+
+@media (min-width: 768px) {
+    header {
+        justify-content: center;
+
+    }
+    header img {
+        width: 138px;
+        height: auto;
+        margin: 0;
+    }
+}
+
 .profile-header {
-    padding: 10px 0 10px 50px;
-    text-align: center;
+    text-align: left;
+}
+
+@media (min-width: 768px) {
+    .profile-header {
+        padding: 10px 0 10px 50px; 
+        text-align: center;
+    }
 }
 
 .profile-header__info {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 15px;
+}
+
+@media (min-width: 768px) {
+    .profile-header__info {
+        justify-content: left;
+
+    }
 }
 
 .profile-header__title {
@@ -55,37 +122,70 @@ header {
 }
 
 .date-inputs {
+    gap: 10px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+    .date-inputs {
+        justify-content: left;
+    }
 }
 
 .date-picker {
   padding: 8px 12px;
   border: 1px solid #ccc;
   border-radius: 6px;
-  width: 150px;
+  width: 100px;
   cursor: pointer;
   margin-right: 10px;
 }
 
+@media (min-width: 768px) {
+    .date-picker {
+        width: 150px;
+    }
+}
+
 .date-inputs__title {
-  margin-bottom: 6px;
+  margin: 0;
   font-weight: 500;
 }
 
-.main-content {
-    width: 70%;
-    margin: 0 auto;
+@media (min-width: 768px) {
+    .date-inputs__title {
+        margin-bottom: 6px;
+    }
+}
 
+.main-content {
+    width: 95%;
+    margin: 0 auto;
+    z-index: 1;
+    position: relative;
+}
+
+@media (min-width: 768px) {
+    .main-content {
+         width: 70%;
+    }
 }
 
 .view-toggle {
     display: flex;
     justify-content: end;
     gap: 20px;
-    margin: 30px 0;
+    margin: 10px 0;
     align-items: center;
+}
+
+@media (min-width: 768px) {
+    .view-toggle {
+         margin: 30px 0;
+    }
 }
 
 .view-toggle__btn {
@@ -96,13 +196,24 @@ header {
 }
 
 .view-toggle__grid {
-    width: 30px;
-    height: 30px;
+    width: 22px;
+    height: 22px;
 }
 
 .view-toggle__list {
-    width: 22px;
-    height: 22px;
+    width: 18px;
+    height: 18px;
+}
+
+@media (min-width: 768px) {
+    .view-toggle__grid {
+        width: 30px;
+        height: 30px;
+    }
+    .view-toggle__list {
+        width: 22px;
+        height: 22px;
+    }
 }
 
 .view-toggle__active {
@@ -143,7 +254,13 @@ header {
     background-color: #fff;
     margin: 10px 0;
     height: 86px;
-    padding-right: 7%;
+}
+
+@media (min-width: 768px) {
+    .post-item {
+            padding-right: 7%;
+
+    }
 }
 
 #postsList.grid-view .post-item__header {
@@ -210,9 +327,27 @@ header {
 
 .post-item__stats span {
     margin: 0 15px 0 0;
-    font-size: 14px;
+    font-size: 10px;
     display: flex;
     gap: 5px;
+}
+
+@media (min-width: 768px) {
+    .post-item__stats span {
+        font-size: 14px;
+    }
+}
+
+.post-item__stats span img {
+    width: 10px;
+    height: 10px;
+}
+
+@media (min-width: 768px) {
+    .post-item__stats span img {
+        width: 15px;
+        height: 15px;
+    }
 }
 
 #postsList.grid-view .post-item__info {
@@ -230,13 +365,19 @@ header {
 
 .post-item__info-date {
     margin: 0;
-    font-size: 14px;
+    font-size: 10px;
+}
+
+@media (min-width: 768px) {
+    .post-item__info-date {
+        font-size: 14px;
+    }
 }
 
 .load-more-container {
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    margin: 50px 0;
 }
 
 .load-more-btn {
@@ -250,3 +391,27 @@ header {
     text-transform: uppercase;
     cursor: pointer;
 }
+
+.sprite-container__bottom {
+    max-width: 1920px;
+    position: relative;
+    text-align: right;
+    margin: 0;
+}
+
+.footer__sprite {
+   display: none;
+}
+
+@media (min-width: 768px) {
+    .footer__sprite {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        bottom: 300px;
+        left: 0;
+        z-index: 0;
+    }
+}
+
