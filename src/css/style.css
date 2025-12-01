@@ -29,7 +29,7 @@ header {
 }
 
 .profile-header__title {
-        font-weight: 400;
+    font-weight: 400;
 }
 
 .profile-header__label {
@@ -58,9 +58,66 @@ header {
     gap: 10px;
 }
 
-.posts-list {
+.main-content {
     width: 70%;
     margin: 0 auto;
+
+}
+
+.view-toggle {
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+    margin: 30px 0;
+    align-items: center;
+}
+
+.view-toggle__btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.view-toggle__grid {
+    width: 30px;
+    height: 30px;
+}
+
+.view-toggle__list {
+    width: 22px;
+    height: 22px;
+}
+
+.view-toggle__active {
+    filter: invert(57%) sepia(93%) saturate(2747%) hue-rotate(191deg) brightness(96%) contrast(92%);
+}
+
+/* List view (default) */
+#postsList.list-view .post-item {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+/* Grid view */
+#postsList.grid-view {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+#postsList.grid-view .post-item {
+    display: grid;
+    height: auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "media media"
+        "title meta"
+        "info info";
+    gap: 10px;
+    padding: 0;
+    background: #fff;
 }
 
 .post-item {
@@ -73,10 +130,22 @@ header {
     padding-right: 7%;
 }
 
+#postsList.grid-view .post-item__header {
+    display: contents;
+    
+}
+
 .post-item__header {
     display: flex;
     align-items: center;
     gap: 15px;
+}
+
+#postsList.grid-view .post-item__media {
+    width: 100%;
+    height: 200px;
+    grid-area: media;
+    object-fit: cover;
 }
 
 .post-item__media {
@@ -84,12 +153,23 @@ header {
     height: 86px;
 }
 
+#postsList.grid-view .post-item__content {
+    grid-area: title;
+    padding-left: 15px;
+}
+
+#postsList.grid-view .post-item__meta {
+    grid-area: meta;
+    grid-row: 2;
+    grid-column: 2;
+}
+
 .post-item__content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    
+
 }
 
 .post-item__title {
@@ -98,16 +178,33 @@ header {
     padding-bottom: 5px;
 }
 
+#postsList.grid-view .post-item__stats {
+    display: inline;
+}
+
 .post-item__stats {
     display: flex;
     align-items: center;
 }
 
-.post-item__stats p {
+#postsList.grid-view .post-item__stats span {
+    padding-bottom: 10px;
+}
+
+
+.post-item__stats span {
     margin: 0 15px 0 0;
     font-size: 14px;
     display: flex;
     gap: 5px;
+}
+
+#postsList.grid-view .post-item__info {
+    grid-area: info;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 0 15px;
 }
 
 .post-item__info {
