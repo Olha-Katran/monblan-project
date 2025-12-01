@@ -1,0 +1,57 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+ h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+ }
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-header {
+    padding: 10px 0 10px 50px;
+    text-align: center;
+}
+
+.profile-header__info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.profile-header__title {
+        font-weight: 400;
+}
+
+.profile-header__label {
+    border: 1px solid #3D8EDA;
+    color: #3D8EDA;
+    padding: 5px;
+    font-size: 13px;
+    border-radius: 2px;
+}
+
+.profile-stats {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    gap: 15px;
+    cursor: pointer;
+}
+
+.profile-stats__item span {
+    font-weight: bold;
+}
+
+.date-inputs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
